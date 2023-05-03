@@ -1,0 +1,103 @@
+
+  <mat-stepper [linear]="isLinear" #stepper>
+
+    <mat-step [stepControl]="firstFormGroup">
+      <form [formGroup]="firstFormGroup" class="payment-form">
+        <ng-template matStepLabel>Fill out your details</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Name</mat-label>
+          <input matInput placeholder="Last name, First name" formControlName="name" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="email" required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Mobile no:</mat-label>
+            <input matInput placeholder="Last name, First name" formControlName="mobile" required>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+
+    <mat-step [stepControl]="secondFormGroup">
+      <form [formGroup]="secondFormGroup" class="payment-form">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field appearance="fill">
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="address" placeholder="Address"
+                 required>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>State</mat-label>
+            <input matInput formControlName="city" placeholder="State"
+                   required>
+          </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="City"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Landmark</mat-label>
+            <input matInput formControlName="landmark" placeholder="Landmark"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Pincode</mat-label>
+            <input matInput formControlName="pincode" placeholder="Pincode"
+                   required>
+          </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup" class="payment-form">
+            <ng-template matStepLabel>Fill out your Payment Info</ng-template>
+          <mat-form-field appearance="fill">
+            <mat-label>Name on Card</mat-label>
+            <input matInput formControlName="cardname" placeholder="Name on Card"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Card Number</mat-label>
+            <input matInput formControlName="cardnumber" placeholder="Card number"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>CVV</mat-label>
+            <input matInput formControlName="cvv" placeholder="CVV"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Expiration Month</mat-label>
+            <input matInput formControlName="expmonth" placeholder="Expiration Month"
+                   required>
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Expiration Year</mat-label>
+            <input matInput formControlName="expyear" placeholder="Expiration year"
+                   required>
+          </mat-form-field>
+        
+          <div>
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+          </div>
+        </form>
+      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-stepper>
+  

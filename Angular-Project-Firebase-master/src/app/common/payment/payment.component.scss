@@ -1,0 +1,21 @@
+.mat-stepper-horizontal {
+    margin-top: 8px;
+  }
+  
+  .mat-mdc-form-field {
+    margin-top: 16px;
+  }
+
+  ::ng-deep .mat-mdc-form-field-infix{
+    width: 450px !important;
+  }
+
+.payment-form{
+  max-width: 400px !important;
+  margin-top: 50px;
+}
+
+tbody td{
+  width: 300px;
+}
+
